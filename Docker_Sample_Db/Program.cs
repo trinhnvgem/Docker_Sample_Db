@@ -38,9 +38,8 @@ builder.Services.AddDbContext<FirstMySqlContext>((serviceProvider, options) =>
            .EnableDetailedErrors();
 });
 
-
 builder.Services.AddAutoMapper(typeof(Program));
-//life cycle DI
+// life cycle DI
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
@@ -52,6 +51,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+// build release
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 

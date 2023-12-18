@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -6,7 +6,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>fcd7e8b2-cb1d-422b-af5c-d5c0014eb102</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="published\**" />
+    <Compile Remove="publish\**" />
+    <Content Remove="published\**" />
+    <Content Remove="publish\**" />
+    <EmbeddedResource Remove="published\**" />
+    <EmbeddedResource Remove="publish\**" />
+    <None Remove="published\**" />
+    <None Remove="publish\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
